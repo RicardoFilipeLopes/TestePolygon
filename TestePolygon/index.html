@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <section style="width: 100%;  height: 100%;  display: flex;">
+        <section class="Par">
+            <ul id="myListPar">
+            </ul>
+        </section>
+        <section class="impar">
+            <ul id="myListImp" class="teste">
+            </ul>
+        </section>
+    </section>
+</body>
+<script>
+
+    
+
+    function num() 
+    {   
+        var arrays=[];
+        var arrImp=[];
+        var arrPar=[];
+        var lipar,liImp;
+        var ulPar = document.getElementById('myListPar');
+        var ulImp = document.getElementById('myListImp');
+
+        for (let index = 1; index <= 10; index++) {
+            
+            arrays.push(Math.floor(Math.random() * 50) + 1 );
+
+            if (arrays[index - 1] % 2 == 0) {
+
+                arrPar.push(arrays[index - 1])
+
+                lipar = document.createElement('li'); 
+                lipar.appendChild(document.createTextNode(arrays[index - 1])); // append the text to the li
+                ulPar.appendChild(lipar); 
+
+            }else{
+                arrImp.push(arrays[index - 1])
+
+                liImp = document.createElement('li'); 
+                liImp.appendChild(document.createTextNode(arrays[index - 1]));
+                ulImp.appendChild(liImp); 
+
+            }
+
+        }
+        
+        console.log(liImp)
+        console.log("par: " , arrPar)
+        console.log("impar: " , arrImp)
+    }
+    num()
+</script>
+</html>
